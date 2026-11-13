@@ -63,11 +63,10 @@ export const scenes = {
     <circle cx="40" cy="30" r="9" fill="#f6f1d3"/>
     <path d="M0 140 Q80 128 160 136 T320 132 V170 H0Z" fill="#c9b48a"/>
     <path d="M0 152 H320 V170 H0Z" fill="#b39d72"/>
-    <rect x="96" y="96" width="8" height="46" fill="#d9dde6"/><rect x="120" y="96" width="8" height="46" fill="#d9dde6"/>
-    <rect x="86" y="132" width="52" height="12" fill="#e7e9ef"/>
-    <path d="M78 100 A34 34 0 0 1 146 100 Z" fill="#f4f6fa"/><path d="M78 100 H146" stroke="#b8c0cf" stroke-width="2"/>
-    <path d="M90 82 Q112 70 134 82" stroke="#cfd5e0" stroke-width="1.5" fill="none"/>
-    <path d="M86 92 Q112 80 138 92" stroke="#cfd5e0" stroke-width="1.5" fill="none"/>
+    <path d="M92 142 L100 104 H124 L132 142Z" fill="#d9dde6"/><path d="M100 118 H124 M97 130 H127" stroke="#b8c0cf" stroke-width="1.5"/>
+    <circle cx="112" cy="84" r="30" fill="#f4f6fa"/>
+    <path d="M84 76 Q112 66 140 76 M82 90 Q112 100 142 90 M112 54 Q98 84 112 114 M112 54 Q126 84 112 114" stroke="#cfd5e0" stroke-width="1.4" fill="none"/>
+    <path d="M86 98 Q112 112 138 98" stroke="#cfd5e0" stroke-width="1.4" fill="none"/>
     <rect x="30" y="72" width="2.5" height="72" fill="#cfd5e0"/>${flag.bh(32.5, 72, 34, 21)}
     <path d="M318 26 Q260 40 214 70" stroke="#ffd6a0" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
     <path d="M318 70 Q270 74 236 92" stroke="#ffd6a0" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
@@ -152,10 +151,12 @@ export const icons = {
   pope: () => `<rect width="120" height="120" fill="none"/>
     ${Array.from({ length: 21 }, (_, i) => `<circle cx="${10 + (i % 7) * 17 + (Math.floor(i / 7) % 2) * 8}" cy="${84 + Math.floor(i / 7) * 12}" r="6" fill="${['#8d99ae', '#c3cad6', '#6b7a90'][i % 3]}"/>`).join('')}
     ${flag.pe(14, 66, 18, 12)}${flag.pe(88, 70, 18, 12)}
-    <path d="M60 14 L50 28 L54 40 H66 L70 28Z" fill="#fff" stroke="#c9a227" stroke-width="2"/><path d="M60 18 V36 M54 26 H66" stroke="#c9a227" stroke-width="2"/>
-    <circle cx="60" cy="46" r="8" fill="#f1c9a5"/>
-    <path d="M44 84 Q46 56 60 54 Q74 56 76 84Z" fill="#fff" stroke="#c3cad6" stroke-width="2"/>
-    <path d="M44 62 L32 46" stroke="#fff" stroke-width="6" stroke-linecap="round"/><circle cx="31" cy="44" r="4" fill="#f1c9a5"/>`,
+    <path d="M38 84 Q40 44 60 40 Q80 44 82 84Z" fill="#fff" stroke="#c3cad6" stroke-width="2"/>
+    <path d="M60 46 V66 M52 54 H68" stroke="#c9a227" stroke-width="3"/>
+    <circle cx="60" cy="30" r="11" fill="#f1c9a5"/><path d="M50 26 A10 10 0 0 1 70 26 Z" fill="#fff" stroke="#c3cad6" stroke-width="1.5"/>
+    <path d="M42 56 L26 30" stroke="#fff" stroke-width="7" stroke-linecap="round"/><path d="M42 56 L26 30" stroke="#c3cad6" stroke-width="1" fill="none"/>
+    <circle cx="25" cy="27" r="4.5" fill="#f1c9a5"/>
+    <path d="M78 56 L94 30" stroke="#fff" stroke-width="7" stroke-linecap="round"/><circle cx="95" cy="27" r="4.5" fill="#f1c9a5"/>`,
 
   bus: () => `<rect x="6" y="46" width="62" height="34" rx="5" fill="#f2a541"/>
     ${[0, 1, 2, 3].map(i => `<rect x="${12 + i * 13}" y="52" width="9" height="11" fill="#9cc9e0"/>`).join('')}
@@ -193,8 +194,17 @@ export const icons = {
     <path d="M0 104 Q30 98 60 104 T120 104 V120 H0Z" fill="#6b9ac4"/>`,
   ballot: () => `<rect x="24" y="50" width="72" height="56" rx="4" fill="#2f5aa8"/><rect x="40" y="56" width="40" height="5" fill="#14213d"/>
     <rect x="44" y="18" width="32" height="40" fill="#fff" stroke="#8d99ae" stroke-width="2"/><path d="M50 36 L58 44 L72 26" stroke="#1b998b" stroke-width="5" fill="none"/>`,
-  ball: () => `<circle cx="60" cy="60" r="44" fill="#fff" stroke="#1d2433" stroke-width="4"/><path d="${pent(60, 60, 15)}" fill="#1d2433"/>
-    ${[0, 1, 2, 3, 4].map(i => { const a = -Math.PI / 2 + i * 2 * Math.PI / 5; return `<path d="M${60 + 15 * Math.cos(a)} ${60 + 15 * Math.sin(a)} L${60 + 34 * Math.cos(a)} ${60 + 34 * Math.sin(a)}" stroke="#1d2433" stroke-width="3"/><path d="${pent(60 + 42 * Math.cos(a), 60 + 42 * Math.sin(a), 8)}" fill="#1d2433"/>`; }).join('')}`,
+  ball: () => `<defs><clipPath id="ballclip"><circle cx="60" cy="60" r="44"/></clipPath></defs>
+    <circle cx="60" cy="60" r="44" fill="#fff"/><g clip-path="url(#ballclip)"><path d="${pent(60, 60, 15)}" fill="#1d2433"/>
+    ${[0, 1, 2, 3, 4].map(i => { const a = -Math.PI / 2 + i * 2 * Math.PI / 5; return `<path d="M${60 + 15 * Math.cos(a)} ${60 + 15 * Math.sin(a)} L${60 + 34 * Math.cos(a)} ${60 + 34 * Math.sin(a)}" stroke="#1d2433" stroke-width="3"/><path d="${pent(60 + 44 * Math.cos(a), 60 + 44 * Math.sin(a), 11)}" fill="#1d2433"/>`; }).join('')}</g>
+    <circle cx="60" cy="60" r="44" fill="none" stroke="#1d2433" stroke-width="4"/>`,
+  globe: () => `<circle cx="60" cy="60" r="40" fill="#6b9ac4"/><path d="M40 34 q14 -6 22 4 q-4 12 -16 10 q-6 10 -2 20 q-12 -6 -12 -18z M70 62 q12 -4 16 8 q-4 14 -14 18 q-6 -12 -2 -26z" fill="#2a9d4b"/>
+    <path d="M30 96 q10 -18 22 -10 q8 -16 20 -6 q12 -12 22 4 q10 -2 12 12z" fill="#f2a541"/><path d="M44 104 q10 -14 20 -6 q10 -10 18 2" fill="#d62839"/>`,
+  chipban: () => `<rect x="30" y="30" width="60" height="60" rx="6" fill="#1d2433"/>
+    ${[0, 1, 2, 3].map(i => `<rect x="${38 + i * 13}" y="22" width="5" height="8" fill="#8d99ae"/><rect x="${38 + i * 13}" y="90" width="5" height="8" fill="#8d99ae"/><rect x="22" y="${38 + i * 13}" width="8" height="5" fill="#8d99ae"/><rect x="90" y="${38 + i * 13}" width="8" height="5" fill="#8d99ae"/>`).join('')}
+    <circle cx="60" cy="60" r="40" fill="none" stroke="#d62839" stroke-width="9"/><path d="M32 32 L88 88" stroke="#d62839" stroke-width="9"/>`,
+  music: () => `<circle cx="60" cy="60" r="44" fill="#c9a227"/><circle cx="60" cy="60" r="36" fill="#f2d16b"/>
+    <path d="M52 34 V74 M52 34 L78 28 V66" stroke="#1d2433" stroke-width="6" fill="none"/><ellipse cx="45" cy="76" rx="9" ry="7" fill="#1d2433"/><ellipse cx="71" cy="68" rx="9" ry="7" fill="#1d2433"/>`,
   candle: () => `<rect x="46" y="50" width="28" height="56" rx="3" fill="#efe6d6" stroke="#c9b48a" stroke-width="2"/><path d="M60 50 V42" stroke="#1d2433" stroke-width="2"/>
     <path d="M60 14 Q74 32 60 44 Q46 32 60 14Z" fill="#f2a541"/><path d="M60 26 Q66 36 60 42 Q54 36 60 26Z" fill="#fff3c4"/>
     ${flag.fr(84, 70, 28, 18)}`,

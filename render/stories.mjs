@@ -19,8 +19,8 @@ export const leads = [
   },
   {
     n: 3, region: 'WORLDWIDE', icon: 'outage', lon: -122.1, lat: 47.6,
-    head: 'Microsoft outage nears 24 hours',
-    sub: 'Outlook and Teams down in 70+ countries. Microsoft "deeply sorry"; not a cyberattack.',
+    head: 'Microsoft outage hits 70+ countries',
+    sub: 'Outlook and Teams down for almost 24 hours. Microsoft is “deeply sorry”; not a cyberattack.',
     src: 'BBC',
   },
 ];
@@ -42,21 +42,27 @@ export const grid = [
   { n: 10, region: 'SOUTH ASIA', icon: 'bus', lon: 93.4, lat: 26.6,
     head: 'Bus and truck collide in India’s Assam: 24 dead', sub: 'Children among the dead, near Kaziranga park', src: 'Al Jazeera, AP' },
   { n: 11, region: 'UNITED STATES', icon: 'ships', lon: -90.1, lat: 29.95,
-    head: 'Tanker rams river cruise ship in New Orleans', sub: '129 passengers aboard; all accounted for', src: 'Guardian' },
+    head: 'Tanker rams river cruise ship in New Orleans', sub: 'All 129 passengers and crew safe', src: 'Guardian' },
   { n: 12, region: 'ECONOMY', icon: 'prices', lon: -74.0, lat: 40.7,
     head: 'US wholesale prices up 6.5% in a year', sub: 'Fastest since 2022; rate-hike bets grow', src: 'CNBC (BLS)' },
 ];
 
 // Short items: a small drawing and one line.
 export const also = [
-  { n: 13, icon: 'ebola', lon: 7.5, lat: 9.1, text: 'Nigeria ends Ebola watch: none of 62 contacts fell ill' },
-  { n: 14, icon: 'stadium', lon: -72.3, lat: 18.5, text: 'Haiti’s forces retake national stadium from gangs' },
-  { n: 15, icon: 'carbomb', lon: 37.6, lat: 55.75, text: 'Moscow car bomb wounds aide to Ukraine’s ex-PM' },
-  { n: 16, icon: 'court', lon: -77.0, lat: 38.9, text: 'US Supreme Court to hear Trump’s asylum ban' },
-  { n: 17, icon: 'rain', lon: 34.4, lat: 31.4, text: 'Gaza: baby dies of cold as rain floods tents' },
-  { n: 18, icon: 'ballot', lon: -105.0, lat: 39.7, text: 'Boebert loses her Colorado seat to a Democrat' },
-  { n: 19, icon: 'ball', lon: -2.29, lat: 53.46, text: 'Man United appoint Pochettino, ex-USA coach' },
-  { n: 20, icon: 'candle', lon: 2.35, lat: 48.86, text: 'Paris marks 11 years since the 13 Nov attacks' },
+  { n: 13, icon: 'globe', lon: 30.7, lat: 36.9, text: 'Guterres at COP31: “no peace on a burning planet”' },
+  { n: 14, icon: 'chipban', lon: 116.4, lat: 39.9, text: 'China warns US against new chip export curbs' },
+  { n: 15, icon: 'ebola', lon: 7.5, lat: 9.1, text: 'Nigeria ends Ebola watch: none of 62 contacts ill' },
+  { n: 16, icon: 'stadium', lon: -72.3, lat: 18.5, text: 'Haiti’s forces retake national stadium from gangs' },
+  { n: 17, icon: 'carbomb', lon: 37.6, lat: 55.75, text: 'Moscow car bomb wounds aide to Ukraine’s ex-PM' },
+  { n: 18, icon: 'rain', lon: 34.4, lat: 31.4, text: 'Gaza: baby dies of cold as rain floods tents' },
+  { n: 19, icon: 'court', lon: -77.0, lat: 38.9, text: 'US Supreme Court to hear Trump’s asylum ban' },
+  { n: 20, icon: 'ballot', lon: -105.0, lat: 39.7, text: 'Boebert loses her Colorado House seat' },
+  { n: 21, icon: 'ball', lon: -2.29, lat: 53.46, text: 'Man United appoint Pochettino, ex-USA coach' },
+  { n: 22, icon: 'music', lon: -115.1, lat: 36.2, text: 'Rosalía: first woman with 3 Latin Grammy best albums' },
+  { n: 23, icon: 'candle', lon: 2.35, lat: 48.86, text: 'Paris marks 11 years since the 13 Nov attacks' },
 ];
+
+// Where a numbered pin would cover another, it is drawn this many pixels away with a leader line.
+export const pinShift = { 6: [10, 12], 12: [16, -8], 8: [16, -4], 1: [-4, 12], 7: [-14, 4], 4: [-12, -6], 2: [-6, 6], 3: [4, -8], 11: [4, 12] };
 
 export const SOURCES = 'Sources, all 13 Nov 2026: BBC, AP, Reuters, Al Jazeera, Guardian, NPR, CNBC, DW, France 24, Euronews';
