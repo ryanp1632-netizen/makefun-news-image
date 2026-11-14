@@ -13,9 +13,9 @@ export const leads = [
   },
   {
     n: 2, region: 'UNITED STATES', icon: 'groundstop', lon: -98, lat: 39,
-    head: 'Every US flight grounded by FAA',
-    sub: 'Air traffic telecoms outage halts departures nationwide; about 7,000 flights delayed or cancelled.',
-    src: 'NPR, Guardian',
+    head: 'FAA grounds every US flight for 4 hours',
+    sub: 'Routers in an “incredibly old” air traffic system overloaded; 11,000+ flights delayed or cancelled.',
+    src: 'NPR, Guardian, CNBC',
   },
   {
     n: 3, region: 'WORLDWIDE', icon: 'outage', lon: -122.1, lat: 47.6,
@@ -42,9 +42,9 @@ export const grid = [
   { n: 10, region: 'SOUTH ASIA', icon: 'bus', lon: 93.4, lat: 26.6,
     head: 'Bus and truck collide in India’s Assam: 24 dead', sub: 'Children among the dead, near Kaziranga park', src: 'Al Jazeera, AP' },
   { n: 11, region: 'UNITED STATES', icon: 'ships', lon: -90.1, lat: 29.95,
-    head: 'Tanker rams river cruise ship in New Orleans', sub: 'All 129 passengers and crew safe', src: 'Guardian' },
-  { n: 12, region: 'ECONOMY', icon: 'prices', lon: -74.0, lat: 40.7,
-    head: 'US wholesale prices up 6.5% in a year', sub: 'Fastest since 2022; rate-hike bets grow', src: 'CNBC (BLS)' },
+    head: 'Tanker rams river cruise ship in New Orleans', sub: '“Miracle on the Mississippi”: all safe, 32 to hospital', src: 'Guardian, CBS' },
+  { n: 12, region: 'US · CHINA · RUSSIA', icon: 'summit', lon: 114.1, lat: 22.5,
+    head: 'Trump, Putin and Xi to hold first three-way summit', sub: 'Next week in Shenzhen; nuclear arms cuts on the agenda', src: 'BBC, NYT' },
 ];
 
 // Short items: a small drawing and one line.
@@ -59,10 +59,10 @@ export const also = [
   { n: 20, icon: 'ballot', lon: -105.0, lat: 39.7, text: 'Boebert loses her Colorado House seat' },
   { n: 21, icon: 'ball', lon: -2.29, lat: 53.46, text: 'Man United appoint Pochettino, ex-USA coach' },
   { n: 22, icon: 'music', lon: -115.1, lat: 36.2, text: 'Rosalía: first woman with 3 Latin Grammy best albums' },
-  { n: 23, icon: 'candle', lon: 2.35, lat: 48.86, text: 'Paris marks 11 years since the 13 Nov attacks' },
-];
+  { n: 23, icon: 'rocket', lon: -97.2, lat: 26.0, text: 'SpaceX Starship flies; booster catch aborted, falls in sea' },
+  { n: 24, icon: 'prices', lon: -74.0, lat: 40.7, text: 'US wholesale prices up 6.5% in a year, fastest since 2022' },];
 
 // Where a numbered pin would cover another, it is drawn this many pixels away with a leader line.
-export const pinShift = { 6: [10, 12], 12: [16, -8], 8: [16, -4], 1: [-4, 12], 7: [-14, 4], 4: [-12, -6], 2: [-6, 6], 3: [4, -8], 11: [4, 12] };
+export const pinShift = { 6: [10, 12], 8: [16, -4], 1: [-4, 12], 7: [-14, 4], 4: [-12, -6], 2: [-6, 6], 3: [4, -8], 11: [4, 12] };
 
-export const SOURCES = 'Sources, all 13 Nov 2026: BBC, AP, Reuters, Al Jazeera, Guardian, NPR, CNBC, DW, France 24, Euronews';
+export const SOURCES = 'Sources, all 13 Nov 2026: BBC, AP, Reuters, Al Jazeera, Guardian, NPR, CNBC, CBS, NYT, DW, France 24, Euronews';

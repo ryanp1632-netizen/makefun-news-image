@@ -34,6 +34,12 @@ const flag = {
     return `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#ce1126"/><path d="${d}" fill="#fff"/>`;
   },
   pe: (x, y, w, h) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#d91023"/><rect x="${x + w / 3}" y="${y}" width="${w / 3}" height="${h}" fill="#fff"/>`,
+  us: (x, y, w, h) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#fff"/>
+    ${[0, 2, 4, 6].map(i => `<rect x="${x}" y="${y + i * h / 7}" width="${w}" height="${h / 7}" fill="#b22234"/>`).join('')}
+    <rect x="${x}" y="${y}" width="${w * 0.42}" height="${h * 4 / 7}" fill="#3c3b6e"/>`,
+  cn: (x, y, w, h) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="#de2910"/><path d="${star(x + w * 0.18, y + h * 0.3, h * 0.2, h * 0.08)}" fill="#ffde00"/>
+    ${[[0.34, 0.12], [0.4, 0.24], [0.4, 0.4], [0.34, 0.52]].map(([a, b]) => `<path d="${star(x + w * a, y + h * b, h * 0.06, h * 0.025)}" fill="#ffde00"/>`).join('')}`,
+  ru: (x, y, w, h) => `<rect x="${x}" y="${y}" width="${w}" height="${h / 3}" fill="#fff"/><rect x="${x}" y="${y + h / 3}" width="${w}" height="${h / 3}" fill="#0039a6"/><rect x="${x}" y="${y + 2 * h / 3}" width="${w}" height="${h / 3}" fill="#d52b1e"/>`,
 };
 
 function star(cx, cy, R, r, pts = 5) {
@@ -181,6 +187,17 @@ export const icons = {
     <path d="M90 34 L100 30 L98 42Z" fill="#d62839"/>
     <text x="28" y="44" font-family="Bahnschrift, Arial, sans-serif" font-size="22" font-weight="700" fill="#1d2433">6.5%</text>`,
 
+  // three leaders' flags on poles around a round table (the White House's announced US-China-Russia summit)
+  summit: () => `<rect x="17" y="12" width="2.5" height="58" fill="#8d99ae"/><rect x="58.8" y="4" width="2.5" height="58" fill="#8d99ae"/><rect x="100.5" y="12" width="2.5" height="58" fill="#8d99ae"/>
+    ${flag.us(19.5, 14, 30, 19)}${flag.cn(61.3, 6, 30, 19)}${flag.ru(103, 14, 15, 19)}
+    <ellipse cx="60" cy="84" rx="50" ry="17" fill="#6b4f35"/><ellipse cx="60" cy="80" rx="50" ry="17" fill="#a47a52"/>
+    <rect x="42" y="96" width="36" height="16" fill="#6b4f35"/>
+    ${[[24, 76], [60, 70], [96, 76]].map(([x, y]) => `<rect x="${x - 8}" y="${y}" width="16" height="11" rx="1" fill="#fff" stroke="#c3cad6"/>`).join('')}`,
+  // a rocket climbing on its flame, booster falling into the sea in flames
+  rocket: () => `<path d="M0 100 Q30 94 60 100 T120 100 V120 H0Z" fill="#6b9ac4"/>
+    <g transform="rotate(30 74 50)"><path d="M66 74 V30 Q74 6 82 30 V74Z" fill="#e9eef4" stroke="#8d99ae" stroke-width="2"/>
+    <path d="M66 62 L58 78 H66Z M82 62 L90 78 H82Z" fill="#8d99ae"/><path d="M68 76 Q74 104 80 76Z" fill="#f2a541"/><path d="M71 76 Q74 92 77 76Z" fill="#fff3c4"/></g>
+    <rect x="22" y="72" width="10" height="26" fill="#8d99ae" transform="rotate(-20 27 85)"/>${burst(28, 96, 12, '#d62839', '#f2a541')}`,
   ebola: () => `<path d="M60 10 L100 24 V58 Q100 92 60 110 Q20 92 20 58 V24Z" fill="#1b998b"/><path d="M40 60 L54 74 L82 44" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`,
   stadium: () => `<ellipse cx="60" cy="70" rx="52" ry="28" fill="#8d99ae"/><ellipse cx="60" cy="66" rx="40" ry="18" fill="#2a9d4b"/><path d="M60 48 V84" stroke="#fff" stroke-width="2"/>
     <rect x="58" y="10" width="3" height="40" fill="#1d2433"/><rect x="61" y="10" width="30" height="10" fill="#00209f"/><rect x="61" y="20" width="30" height="10" fill="#d21034"/>`,

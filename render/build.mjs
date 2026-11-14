@@ -82,7 +82,7 @@ h1 { font-family: Bahnschrift, 'Segoe UI', sans-serif; font-weight: 700; font-si
 .lead h2 { font-size: 22.5px; line-height: 1.12; font-weight: 700; margin: 4px 0 4px; color: ${C.navy}; }
 .lead p { font-size: 13.6px; line-height: 1.3; color: #444c5e; }
 .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px 12px; margin-top: 10px; }
-.card { background: #fff; border-radius: 8px; padding: 6px 10px 6px 8px; display: flex; gap: 9px; align-items: center; box-shadow: 0 1px 0 #e2dccf; height: 90px; }
+.card { background: #fff; border-radius: 8px; padding: 6px 10px 6px 8px; display: flex; gap: 9px; align-items: center; box-shadow: 0 1px 0 #e2dccf; height: 88px; }
 .card svg { flex: none; }
 .card .tag { font-size: 11px; color: ${C.blue}; }
 .num.sm { width: 16px; height: 16px; font-size: 10px; background: ${C.blue}; }
